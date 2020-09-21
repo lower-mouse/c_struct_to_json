@@ -17,7 +17,8 @@
 #include <unordered_map>
 #include <string.h>
 #include <ctype.h>
-   
+#include <libgen.h>   
+
 char *strToupper(char *string)
 {
     char *p;
@@ -227,6 +228,7 @@ translate::translate(const char *configPath, const char *prefix, const char *nam
     {
         memset(m_prefix, 0, sizeof(m_prefix));
         strncpy(m_prefix, prefix, sizeof(m_prefix)-1);
+	dirname(m_prefix);
     }
     
     if(name != NULL)
