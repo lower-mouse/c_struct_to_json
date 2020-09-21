@@ -61,9 +61,11 @@ child     |结构体中的成员
 ----------|---------
 type      |结构体成员的类型， 支持char int float double long bool 这几种基本类型, 如果是结构体类型需要有这种类型的描述(枚举类型不需要填这个字段)
 name  	  |成员名 (不能包含空格)
-alias     |结构体转换成 json 对象的名字， (不填则采用成员名)
+alias     |结构体成员变量转换成 json 对象的名字， (不填则采用成员名)
 max       |max 大于1, 则认为是数组(可不填)
 description    |结构体成员的注释(可不填)
+
+**note:** 结构体描述文件中的json对象的顺序可要注意， 在有依赖的情况下，被依赖的结构体描述应该放在下面， 例如在 testCfg 的成员中有 position 对象， 所以 position 的定义需要在 testCfg 下方。
 
 ### 测试生成的代码
 在执行上面的命令后，就生成好了代码，在out目录下 testMain.cpp 的文件中, 有一个怎么使用自动化代码的 demo , 如果没有改 config/test.txt 文件， 可以直接 make 编译通过， 然后运行

@@ -1,0 +1,32 @@
+{
+	"testCfg":{
+		"attr":"struct",
+		"document":"this is a osd config",
+		"child":[
+			{"type":"int", "name":"number", "alias":"test number", "max":1, "description":"this is a number"},
+			{"type":"int", "name":"array", "alias":"test array", "max":5},
+			{"type":"char", "name":"c", "max":1},
+			{"type":"char", "name":"string", "max":128},
+			{"type":"timeFormat", "name":"timeFormat"},
+			{"type":"position", "name":"positionArray", "max":4},
+			{"type":"position", "name":"structure"}
+		]	
+	},
+	"position":{
+		"attr":"struct",
+		"document":"description osd position",
+		"child":[
+			{"type":"int","name":"x","max":1,"description":"this is x position of osd"},
+			{"type":"int","name":"y","max":1}
+		]
+	},
+	"timeFormat":
+	{
+		"attr":"enum",
+		"document":"description enum format",
+		"child":[
+			{"name":"TIME_YY_MM_DD", "description":"time format year--month--day"},
+			{"name":"TIME_DD_MM_YY"}
+			]
+	}
+}
